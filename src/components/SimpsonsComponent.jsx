@@ -36,17 +36,19 @@ const SimpsonsComponent = (props) => {
             photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
         },
     ];
-    const person = +Object.values(props)
-    console.log(simpsons[person-1])
-    const {name, surname, age, info, photo} = simpsons[person-1];
     return (
-        <div>
-            <p>Ім'я: {name}</p>
-            <p>Прізвище: {surname}</p>
-            <p>Вік: {age}</p>
-            <p>Інформація: {info}</p>
-            <img src={photo} alt='Фото'/>
-        </div>
-)
+        <div className={"SimpsonsDiv"}>
+    {simpsons.map(simpson=>(
+        <div className={'Simpson'}>
+                <p>Ім'я: {simpson.name}</p>
+                <p>Прізвище: {simpson.surname}</p>
+                <p>Вік: {simpson.age}</p>
+                <p>Інформація: {simpson.info}</p>
+                <img src={simpson.photo} alt='Фото'/>
+            </div>
+        ))
+
+}
+        </div>)
 }
 export default SimpsonsComponent;
