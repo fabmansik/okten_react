@@ -8,6 +8,7 @@ Edited:
 - App.js
 - index.css
 - index.js
+  
 Created:
 - RickAndMortyComponent.jsx
 - SimpsonsComponent.jsx
