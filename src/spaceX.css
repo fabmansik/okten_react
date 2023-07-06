@@ -1,0 +1,30 @@
+
+.launch_info{
+    width: 47.8%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 10px auto 10px auto;
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+.launch_info p{
+    margin: 5px;
+    max-width: 126px;
+    overflow: auto;
+}
+.launch_info h3{
+    margin: 5px;
+}
+.launch_info button{
+    right: 5px;
+    margin: 5px;
+}
+
+img{
+    height: 100px;
+    margin: 7px 0 7px 0;
+}

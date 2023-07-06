@@ -1,0 +1,24 @@
+
+.posts_info{
+    width: 47.8%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 10px auto 10px auto;
+    text-align: start;
+
+}
+.posts_info p{
+    margin: 5px;
+}
+.posts_info h3{
+    margin: 5px;
+}
+.posts_info button{
+    right: 5px;
+    margin: 5px;
+}
+.postsDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
