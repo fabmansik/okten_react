@@ -10,7 +10,9 @@ export const SpaceX = () =>{
     },[])
     return(
         <>
-            {launches.map((launch, flight_number)=>{
+            {launches
+                .filter(launch => launch.launch_year !== "2020")
+                .map((launch, flight_number)=>{
                 return <SpaceXComponent key={flight_number} launch={launch}/>
             })}
 

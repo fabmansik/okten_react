@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-
-import {Posts} from "./Posts";
+import {PostsComponent} from "./PostsComponent";
 import {useState} from "react";
 import {SpaceX} from "./SpaceX";
 // import {Users} from "./Users";
@@ -22,7 +20,7 @@ function App() {
         {/*{showUsers && <button onClick={()=>{setShowUsers(false)}}>Close Users homework</button>}*/}
       </header>
 
-      {showPosts && <Posts/>}
+      {showPosts && <PostsComponent/>}
       {showSpaceX && <SpaceX/>}
       {/*{showUsers &&<Users/>}*/}
 

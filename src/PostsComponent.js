@@ -1,28 +1,41 @@
 import './post.css'
-import {useState} from "react";
-export const PostsComponent = (props) =>{
-    const {post} = props
+import {useEffect, useState} from "react";
+export const PostsComponent = () =>{
+    const [posts, setPosts] = useState([]);
     const [showPostInfo, setShowPostInfo] = useState(false)
     const [showButton, setShowButton] = useState(true)
+    useEffect(()=>{
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(res=> res.json())
+            .then((posts)=>setPosts(posts))
+    },[])
     return(
         <>
-            <div id={'post_'+post.id} className={'posts_info'}>
-                <h3>Post id:</h3>
-                <p>{post.id}</p>
-                <h3>Post title:</h3>
-                <p>{post.title}</p>
-                {showPostInfo && <h3>Post userID:</h3>}
-                {showPostInfo && <p>{post.userId}</p>}
-                {showPostInfo && <h3>Post body:</h3>}
-                {showPostInfo && <p>{post.body}</p>}
+            {posts.map((post)=>{
+                return(
+                    <>
+                        <div id={'post_'+post.id} className={'posts_info'}>
+                            <h3>Post id:</h3>
+                            <p>{post.id}</p>
+                            <h3>Post title:</h3>
+                            <p>{post.title}</p>
+                            {showPostInfo && <h3>Post userID:</h3>}
+                            {showPostInfo && <p>{post.userId}</p>}
+                            {showPostInfo && <h3>Post body:</h3>}
+                            {showPostInfo && <p>{post.body}</p>}
 
-                <div className={'buttonDiv'}>
+                            <div className={'buttonDiv'}>
 
-                    {showButton && <button onClick={()=>{setShowPostInfo(true); setShowButton(false)}}>Post Details</button>}
-                    {!showButton && <button onClick={()=>{setShowPostInfo(false); setShowButton(true)}}>Hide Details</button>}
-                </div>
-                <div className={'info'}></div>
-            </div>
+                                {showButton && <button onClick={()=>{setShowPostInfo(true); setShowButton(false)}}>Post Details</button>}
+                                {!showButton && <button onClick={()=>{setShowPostInfo(false); setShowButton(true)}}>Hide Details</button>}
+                            </div>
+                            <div className={'info'}></div>
+                        </div>
+                    </>
+                )
+            })}
         </>
     )
+
+
 }
