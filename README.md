@@ -11,7 +11,6 @@ Edited:
 - index.js
   
 Created:
-- Posts.js
 - PostsComponent.js
 - post.css
 - SpaceX.js
