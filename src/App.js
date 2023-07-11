@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import {useEffect, useState} from "react";
-import {UsersComponent} from "./Components/UsersComponent";
+
 
 function App() {
   const [users, setUsers] = useState()
@@ -13,7 +12,7 @@ function App() {
   },[])
   return (
     <div className="App">
-      <UsersComponent users={users}/>
+
     </div>
   );
 }
