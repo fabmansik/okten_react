@@ -1,12 +1,17 @@
 import {useEffect, useState} from "react";
+import {UserComponent} from "./UserComponent";
 
 export const UsersComponent = ({users}) => {
-    const [user, setUser] = useState()
-    useEffect(()=>{
-        setUser(users)
-        console.log(users)
-    })
-    user.map(it=>{
-        <UserComponent/>
-    })
+    return(
+        <div className="Users">
+            {users.map(user=>{
+                return (
+
+                    <UserComponent user={user}/>
+                )
+        })}
+        </div>
+
+    )
+
 }

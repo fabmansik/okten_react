@@ -4,11 +4,11 @@ import {useEffect, useState} from "react";
 import {UsersComponent} from "./Components/UsersComponent";
 
 function App() {
-  const [users, setUsers] = useState()
+  const [users, setUsers] = useState([])
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
-        .then(users => {setUsers(users); console.log(users)})
+        .then(users => {setUsers(users)})
 
   },[])
   return (
