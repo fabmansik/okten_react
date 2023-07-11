@@ -10,4 +10,5 @@ Created:
 Edited:
 - App.js
 - App.css
-
+- manifest.json
+- index.js
