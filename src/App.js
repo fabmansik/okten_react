@@ -1,19 +1,19 @@
 import './App.css';
-import {useEffect, useState} from "react";
+import {createContext, useState} from "react";
+import {Child1} from "./components/Child1/Child1";
+import {Child2} from "./components/Child2/Child2";
 
-
+export const Context = createContext(null)
 function App() {
-  const [users, setUsers] = useState()
-  useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
-        .then(users => {setUsers(users); console.log(users)})
-
-  },[])
+  const [data, setData] = useState([1,2,3])
   return (
-    <div className="App">
-
-    </div>
+      <Context.Provider value={{setData, data}}>
+          <div className="App">
+            <Child1/>
+              <hr/>
+            <Child2/>
+          </div>
+      </Context.Provider>
   );
 }
 
