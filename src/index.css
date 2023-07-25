@@ -11,3 +11,133 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App {
+  text-align: center;
+
+}
+html{
+  background-color: darkgrey;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+a:hover{
+  transition: 0.5s;
+  font-size: 18px;
+}
+.todos{
+}
+.todo-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo{
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #282c34;
+}
+.todo h3{
+  margin: 0;
+}
+.todo p{
+  margin: 10px 0 0 0 ;
+  font-size: 13px;
+}
+.album{
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 5px 5px 20px #282c34;
+}
+.album-info{
+  display: flex;
+  justify-content: space-evenly;
+}
+.album h3{
+  margin: 0;
+}
+.album p{
+  margin: 10px 0 0 0 ;
+  font-size: 13px;
+}
+.comment{
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px 0 0 0;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*justify-content: space-between;*/
+  padding: 10px;
+  box-shadow: 5px 5px 20px #282c34;
+  transition: 1s;
+}
+
+.comment p{
+  margin: 10px 0 0 0 ;
+  font-size: 13px;
+  transition: 0.5s;
+}
+.comment h3{
+  margin: 0;
+}
+.comment:hover p{
+  padding-left: 20px;
+  transition: 0.5s;
+}
+.comments{
+  display: grid;
+  margin-right: auto;
+  margin-left: auto;
+  width: 98%;
+  margin-top: 10vh;
+  transition: 1s;
+  grid: auto-flow 30vh / repeat(3, 32.66666%);
+  column-gap: 1%;
+}
+.post{
+  position: fixed;
+  background-color: #282c34;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+.post h3{
+  margin: 0;
+}
+.post p{
+  margin: 5px;
+}
+
