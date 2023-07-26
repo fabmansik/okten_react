@@ -1,13 +1,106 @@
 body {
-  margin: 0;
+  margin: 150px 0 0 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+html{
+  background-color: #F0EFEE;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+/*HeaderComponent*/
+header{
+  background-color: #FFFFFF;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+}
+.logo-img{
+  width: 155px;
+  height: 52px;
+}
+.menu-img{
+  width: 49px;
+  height: 35px;
+}
+.search{
+  height: 32px;
+  width: 40%;
+  display: flex;
+  background-color: #F7F6F6;
+  align-items: center;
+  position: relative;
+}
+.search input{
+  height: 100%;
+  width: 100%;
+  border: solid 1px RGBA(231, 231, 231, 1);
+  background-color: #F7F6F6;
+  border-radius: 10px;
+}
+.search input:focus{
+  outline: none;
+}
+.search .shape-img{
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 5px;
+}
+.account{
+  height: 38px;
+  display: flex;
+  align-items: center;
+  color: #8C8C8C;
+  font-size: 15px;
+}
+.account-img{
+  border-radius: 50%;
+  height: 38px;
+  margin-right: 10px ;
+}
+
+/*MoviePage*/
+.movie-list{
+  display: grid;
+  width: 70vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  /*grid-template-rows: auto;*/
+  margin: auto ;
+}
+.movie-card{
+
+}
+.poster-div{
+
+}
+.poster-img{
+  width: 100%;
+}
+/*Genre Badge Component*/
+.badges{
+  display: flex;
+  overflow: visible;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.badges .badge{
+  width: auto;
+  font-size: 20px;
+}
+.MuiBadge-badge {
+  white-space: nowrap;
 }
