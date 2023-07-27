@@ -10,7 +10,14 @@ export const ApiServices = {
     AxiosGetMovies : (setMoviesList, setGetInfo)=>{
         axios.get('https://api.themoviedb.org/3/discover/movie',options).then(res=>{setMoviesList(res.data.results); setGetInfo(res.data)})
     },
+    AxiosGetMoviesPageUp : (setMoviesList, setGetInfo, page)=>{
+        axios.get(`https://api.themoviedb.org/3/discover/movie?page=${page+1}`,options).then(res=>{setMoviesList(res.data.results); setGetInfo(res.data)})
+    },
+    AxiosGetMoviesPageDown : (setMoviesList, setGetInfo, page)=>{
+        axios.get(`https://api.themoviedb.org/3/discover/movie?page=${page-1}`,options).then(res=>{setMoviesList(res.data.results); setGetInfo(res.data)})
+    },
     AxiosGetGenres: (setGenres) =>{
         axios.get('https://api.themoviedb.org/3/genre/movie/list', options).then(res=>{setGenres(res.data.genres)})
     }
+
 }

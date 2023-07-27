@@ -9,15 +9,17 @@ export const MovieInfoComponent = ({movie}) => {
         genresContext.find(genre => genre.id === genre_id ? genres.push(genre.name) :  0)
     )
     return(
-        <>
+        <div className='movie-info'>
             <div className='movie-title'>
                 <h4>{movie.title}</h4>
-                <img src='/location.png'></img>
-                <div className='badges'>
-                    {genres.map(genre=><GenreBadgeComponent badge={genre}/>
-                    )}
-                </div>
             </div>
-        </>
+            <div className='movie-badges'>
+                {genres.map(genre=><GenreBadgeComponent key={genre} badge={genre}/>
+                )}
+            </div>
+            <div className='movie-description'>
+                {movie.overview}
+            </div>
+        </div>
     )
 }

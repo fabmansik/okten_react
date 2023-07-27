@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './styles/MovieInfoPage.css'
 import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
-import {HeaderComponent} from "./components/HeaderComponent";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {MoviesPageContainer} from "./containers/MoviesPageContainer";
 import {MoviesListComponent} from "./components/MoviesListComponent";
+import {MovieInfoPageComponent} from "./components/MovieInfoPageComponent";
 const AppLayout = () =>(
     <>
         <MoviesPageContainer/>
@@ -20,8 +21,8 @@ const router = createBrowserRouter([
                 element: <MoviesListComponent/>
             },
             {
-                path: '/dafafd',
-                element: <div></div>
+                path: '/movie',
+                element: <MovieInfoPageComponent givenClass={'movie-info-footer'}/>
             }
         ]
     },
