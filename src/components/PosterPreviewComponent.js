@@ -1,6 +1,3 @@
-import {useEffect, useState} from "react";
-import {ApiServices} from "../services/ApiServices";
-
 export const PosterPreviewComponent = ({poster}) => {
     return(
         <div className='poster-div'>

@@ -1,6 +1,10 @@
+import {useContext} from "react";
+import {ThemeContext} from "../containers/MoviesPageContainer";
+
 export const UserInfoComponent = () => {
+    const {theme} = useContext(ThemeContext)
     return(
-        <div className='account'>
+        <div className={`account ${theme}`}>
             <img className='account-img' src='/accountImg.jpg'></img>
             <p>Welcome Milan</p>
         </div>

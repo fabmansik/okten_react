@@ -1,8 +1,10 @@
+
 .movie-info-page{
-    min-height: 100vh;
+    margin-top: 290px;
+    min-height: calc(100vh - 190px);
 }
 .movie-all{
-    margin: 120px auto 20px;
+    margin: 240px auto 20px;
     width: 50%;
     background-color: #FFFFFF;
     padding: 20px;
@@ -79,5 +81,24 @@
 @media screen and (max-width: 1000px) {
     .movie-all{
         width: 80%;
+    }
+}
+@media screen and (max-width: 750px) {
+    .movie-all-info{
+        display: block;
+    }
+    .movie-all-details{
+        padding: 0;
+    }
+}
+@media screen and (max-width: 360px){
+    .movie-all-genres{
+        display: block;
+    }
+    .movie-all-added-info{
+        display: block;
+    }
+    .movie-all-original{
+        display: block;
     }
 }

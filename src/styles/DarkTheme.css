@@ -1,0 +1,24 @@
+/*Header*/
+header.dark{
+    background-color: #190c1f;
+    transition: 1s;
+}
+.menu-img.dark{
+    background-color: #41234f;
+    transition: 1s;
+    border: 1px solid black;
+}
+.search.dark input{
+    border: solid 1px black;
+    background-color: #41234f;
+    color: #8952a3;
+}
+.search.dark{
+    background-color: #232931;
+}
+.account.dark{
+    color: #8952a3;
+}
+.movie-page.dark{
+    background-color: #726A95;
+}

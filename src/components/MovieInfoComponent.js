@@ -1,5 +1,4 @@
-import {ApiServices} from "../services/ApiServices";
-import {useContext, useEffect, useState} from "react";
+import {useContext} from "react";
 import {GenresContext} from "./MoviesListComponent";
 import {GenreBadgeComponent} from "./GenreBadgeComponent";
 export const MovieInfoComponent = ({movie}) => {

@@ -1,17 +1,18 @@
-import { useLocation } from 'react-router-dom';
+import {ScrollRestoration, useLocation} from 'react-router-dom';
 import {StarsRatingComponent} from "./StarsRatingComponent";
-
+import React from "react";
 export const MovieInfoPageComponent = () => {
     const location = useLocation();
     const {movie, genres} = location.state;
-    const {adult, backdrop_path, genre_ids, id, original_language, original_title,
-        overview, popularity, poster_path, release_date, title, video, vote_average,
-        vote_count} = movie
+    const {adult,  genre_ids, original_language, original_title,
+        overview, popularity, poster_path, release_date, title, vote_average} = movie
     let movieGenres = []
     genre_ids.map(genre_id=>
         genres.find(genre => genre.id === genre_id ? movieGenres.push(genre.name) :  0)
     )
 return(
+    <>
+        <ScrollRestoration />
     <div className='movie-info-page'>
         <div className='movie-all'>
             <div className='movie-all-title'>
@@ -52,6 +53,6 @@ return(
             </div>
         </div>
     </div>
-
+    </>
 )
 }

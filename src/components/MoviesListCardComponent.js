@@ -1,21 +1,24 @@
 import {PosterPreviewComponent} from "./PosterPreviewComponent";
 import {MovieInfoComponent} from "./MovieInfoComponent";
 import {StarsRatingComponent} from "./StarsRatingComponent";
-import {Link} from "react-router-dom";
-import {createContext, useContext} from "react";
+import {Link, useParams} from "react-router-dom";
+import {useContext} from "react";
 import {GenresContext} from "./MoviesListComponent";
+import {Context750, ContextBetween} from "../containers/MoviesPageContainer";
+
 export const MoviesListCardComponent = ({movie}) => {
-    const {adult, backdrop_path, genre_ids, id, original_language, original_title,
-        overview, popularity, poster_path, release_date, title, video, vote_average,
-        vote_count} = movie
+    const {poster_path, title, vote_average, vote_count} = movie
     const genres = (useContext(GenresContext))
+    const small750 = useContext(Context750)
+    const params = useParams()
+    const between = useContext(ContextBetween)
     return(
-        <Link to='/movie' state={{movie, genres}}>
+        <Link to={`/${params.page}/${title}`} state={{movie, genres}} preventScrollReset={false}>
             <div className='movie-card'>
                 <PosterPreviewComponent poster={poster_path}/>
                 <MovieInfoComponent movie={movie}/>
                 <div className='movie-rating'>
-                    <StarsRatingComponent vote_count={vote_count} vote_average={vote_average}/>
+                    <StarsRatingComponent vote_count={vote_count} vote_average={vote_average} size={between? 'small': small750? 'large' : 'medium'}/>
                 </div>
             </div>
         </Link>

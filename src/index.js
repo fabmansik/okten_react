@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {createContext, useContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './styles/MovieInfoPage.css'
+import './styles/DarkTheme.css'
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {MoviesPageContainer} from "./containers/MoviesPageContainer";
@@ -18,12 +19,20 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <MoviesListComponent/>
+                element: <MoviesListComponent/>,
+                children: [
+                    {
+                        path: '/:page?',
+                        element: <MoviesListComponent/>
+
+                    },
+                ]
             },
             {
-                path: '/movie',
-                element: <MovieInfoPageComponent givenClass={'movie-info-footer'}/>
+                path: '/:page/:title',
+                element: <MovieInfoPageComponent/>
             }
+
         ]
     },
 ]);
