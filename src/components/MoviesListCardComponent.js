@@ -7,13 +7,13 @@ import {GenresContext} from "./MoviesListComponent";
 import {Context750, ContextBetween} from "../containers/MoviesPageContainer";
 
 export const MoviesListCardComponent = ({movie}) => {
-    const {poster_path, title, vote_average, vote_count} = movie
+    const {poster_path, vote_average, vote_count, id} = movie
     const genres = (useContext(GenresContext))
     const small750 = useContext(Context750)
     const params = useParams()
     const between = useContext(ContextBetween)
     return(
-        <Link to={`/${params.page}/${title}`} state={{movie, genres}} preventScrollReset={false}>
+        <Link to={`/${params.page}/${id}`} state={{genres}} preventScrollReset={false}>
             <div className='movie-card'>
                 <PosterPreviewComponent poster={poster_path}/>
                 <MovieInfoComponent movie={movie}/>

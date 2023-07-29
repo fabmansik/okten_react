@@ -15,6 +15,13 @@ export const ApiServices = {
     },
     AxiosGetGenres: (setGenres) =>{
         axios.get('https://api.themoviedb.org/3/genre/movie/list', options).then(res=>{setGenres(res.data.genres)})
+    },
+    AxiosSearchMovie: (search, setMovies) =>{
+        axios.get(`https://api.themoviedb.org/3/search/movie?query=${search}`,options).then(res=>setMovies(res.data))
+    },
+    AxiosSearchById: (id, setIdMovie) =>{
+        console.log(id)
+        axios.get(`https://api.themoviedb.org/3/movie/${id}`, options).then(res=>setIdMovie(res.data))
     }
 
 }

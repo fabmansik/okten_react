@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                 ]
             },
             {
-                path: '/:page/:title',
+                path: '/:page/:id',
                 element: <MovieInfoPageComponent/>
             }
 
