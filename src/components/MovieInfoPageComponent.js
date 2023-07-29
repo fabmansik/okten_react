@@ -30,20 +30,20 @@ return(
                         </div>
                     </div>
                     <div className='movie-all-genres'>
-                        <p style={{fontWeight:'bold'}}>Genres: </p>
+                        <p className='info-title'>Genres: </p>
                         <p>{movieGenres.map(genre=><span key={genre}>{genre} </span>)}</p>
                     </div>
                     <div className='movie-all-added-info'>
-                        <p style={{fontWeight:'bold'}}>Popularity: </p>
+                        <p className='info-title'>Popularity: </p>
                         <p>{popularity}</p>
-                        <p style={{fontWeight:'bold'}}>Adult: </p>
+                        <p className='info-title'>Adult: </p>
                         <p>{adult.toString()}</p>
-                        <p style={{fontWeight:'bold'}}>Release date: </p>
+                        <p className='info-title'>Release date: </p>
                         <p>{release_date}</p>
                     </div>
                     <div className='movie-all-original'>
-                        <p style={{fontWeight:'bold'}}>Original Language: </p><p>{original_language}</p>
-                        <p style={{fontWeight:'bold'}}>Original Title: </p><p>{original_title}</p>
+                        <p className='info-title'>Original Language: </p><p>{original_language}</p>
+                        <p className='info-title'>Original Title: </p><p>{original_title}</p>
                     </div>
                 </div>
             </div>

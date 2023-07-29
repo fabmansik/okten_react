@@ -16,8 +16,7 @@ html{
   scroll-behavior: smooth;
 }
 #root{
-
-  margin: -150px 0;
+  margin: 0;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -52,6 +51,13 @@ header{
 }
 .movie-page{
   background-color: #F0EFEE;
+  transition: 1s;
+}
+.movie-page-header{
+  background-color: #F0EFEE;
+  height: 150px;
+  width: 100%;
+  transition: 1s;
 }
 footer{
   background-color: #FFFFFF;
@@ -61,7 +67,7 @@ footer{
   display: flex;
   align-items: center;
   justify-content: space-around;
-
+  transition: 1s;
 }
 .logo-img{
   width: 155px;
@@ -80,6 +86,7 @@ footer{
   align-items: center;
   position: relative;
   overflow: hidden;
+  transition: 1s;
 }
 .menu-img:hover{
   cursor: pointer;
@@ -109,15 +116,6 @@ footer{
   transition: 1s;
 }
 
-/*.menu-img:hover .light-img{*/
-/*  margin-left: -80px;*/
-/*  transition: 1s;*/
-/*}*/
-/*.menu-img:hover .dark-img{*/
-/*  margin-right: 13px;*/
-/*  transition: 1s;*/
-/*}*/
-
 .search{
   height: 32px;
   width: 40%;
@@ -126,6 +124,7 @@ footer{
   align-items: center;
   position: relative;
   border-radius: 10px;
+  transition: 1s;
 }
 .search input{
   height: 100%;
@@ -133,15 +132,16 @@ footer{
   border: solid 1px RGBA(231, 231, 231, 1);
   background-color: #F7F6F6;
   border-radius: 10px;
+  transition: 1s;
 }
 .search input:focus{
   outline: none;
 }
 .search .shape-img{
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   position: absolute;
-  right: 5px;
+  right: 10px;
 }
 .account{
   width: 20%;
@@ -151,6 +151,7 @@ footer{
   justify-content: end;
   color: #8C8C8C;
   font-size: 15px;
+  transition: 1s;
 }
 .account-img{
   border-radius: 50%;
@@ -175,6 +176,7 @@ footer{
   box-shadow: 0 0 7px 1px #757575;
   position: relative;
   align-items: center;
+  transition: 1s;
 }
 .page-selector button:disabled{
   font-weight: normal;
@@ -212,13 +214,14 @@ footer{
   grid-column-gap: 2.66666%;
   grid-row-gap: 20px;
   /*grid-template-rows: auto;*/
-  margin: 280px auto 0 ;
+  margin: 0 auto 0 ;
 }
 .movie-card{
   background-color: #FFFFFF;
   position: relative;
   z-index: 1;
   box-shadow: 0 0 7px 1px #757575;
+  transition: 1s;
 }
 .movie-card:hover{
   cursor: pointer;
@@ -333,7 +336,10 @@ footer{
     justify-content: center;
   }
   .shape-img{
-    margin-right: 9px;
+    margin-right: 4px;
+    width: 22px;
+    height: 22px;
+    right: 5px;
   }
   .movie-list{
     display: grid;
@@ -342,7 +348,7 @@ footer{
     grid-column-gap: 2.66666%;
     grid-row-gap: 20px;
     /*grid-template-rows: auto;*/
-    margin: 280px auto 0 ;
+    margin: 0 auto 0 ;
   }
   .movie-title{
     height: 40px;
@@ -361,6 +367,7 @@ footer{
     margin: 5px 0 30px 0;
     font-size: 14px;
     height: 150px;
+    padding: 0 10px;
   }
   .movie-rating{
     margin-top: 40px;

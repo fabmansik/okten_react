@@ -13,7 +13,11 @@ export const HeaderComponent = () => {
                 <Link to={Object.keys(params).length <=1 ? `/`: `/${params.page}`}>
                     <img className='logo-img' src={`/Logo_${theme}.png`}></img>
                 </Link>
-                <div className={`menu-img ${theme}`} onClick={()=>{theme === 'light'? setTheme('dark') : setTheme('light')}}>
+                <div className={`menu-img ${theme}`} onClick={()=>{
+                    theme === 'light'?
+                        setTheme('dark') || localStorage.setItem('theme','dark') :
+                        setTheme('light') || localStorage.setItem('theme','light')}
+                }>
                     <div className={`line ${theme}`} style={{marginLeft: `${theme}`, transition: '1s'}}>
                         <img className='light-img' src='/light-bulb.png' />
                         <img className='dark-img' src='/moon.png'/>
@@ -22,8 +26,11 @@ export const HeaderComponent = () => {
             </div>}
             {small750 &&
                 <>
-                    <div className={`menu-img ${theme}`} onClick={()=>{theme === 'light'? setTheme('dark') : setTheme('light')}}>
-                        <div className={`line ${theme}`} style={{marginLeft: `${theme}`, transition: '1s'}}>
+                    <div className={`menu-img ${theme}`} onClick={()=>{
+                        theme === 'light'?
+                            setTheme('dark') || localStorage.setItem('theme','dark') :
+                            setTheme('light') || localStorage.setItem('theme','light')}
+                    }>                        <div className={`line ${theme}`} style={{marginLeft: `${theme}`, transition: '1s'}}>
                             <img className='light-img' src='/light-bulb.png' />
                             <img className='dark-img' src='/moon.png'/>
                         </div>

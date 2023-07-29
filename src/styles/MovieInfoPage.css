@@ -1,15 +1,14 @@
-
 .movie-info-page{
-    margin-top: 290px;
     min-height: calc(100vh - 190px);
 }
 .movie-all{
-    margin: 240px auto 20px;
+    margin: 0 auto 20px;
     width: 50%;
     background-color: #FFFFFF;
     padding: 20px;
     box-shadow: 0 0 7px 1px #757575;
     height: 100%;
+    transition: 1s;
 }
 .movie-all-poster{
     right: auto;
@@ -22,6 +21,7 @@
 .movie-all-info{
     display: flex;
     position: relative;
+    transition: 1s;
 }
 .movie-all-info p{
     margin: 5px 0
@@ -88,10 +88,10 @@
         display: block;
     }
     .movie-all-details{
-        padding: 0;
+        padding: 0 20px 20px;
     }
 }
-@media screen and (max-width: 360px){
+@media screen and (max-width: 400px){
     .movie-all-genres{
         display: block;
     }
@@ -100,5 +100,17 @@
     }
     .movie-all-original{
         display: block;
+    }
+    .movie-all-genres .info-title{
+        font-weight:bold;
+        padding: 10px 0 0;
+    }
+    .movie-all-added-info .info-title{
+        font-weight:bold;
+        padding: 10px 0 0;
+    }
+    .movie-all-original .info-title{
+        font-weight:bold;
+        padding: 10px 0 0;
     }
 }

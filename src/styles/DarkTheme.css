@@ -1,24 +1,67 @@
 /*Header*/
 header.dark{
-    background-color: #190c1f;
+    background-color: #0f0f0f;
     transition: 1s;
 }
 .menu-img.dark{
-    background-color: #41234f;
+    background-color: #202121;
     transition: 1s;
     border: 1px solid black;
 }
 .search.dark input{
     border: solid 1px black;
-    background-color: #41234f;
-    color: #8952a3;
+    background-color: #202121;
+    color: darkgrey;
+    transition: 1s;
 }
 .search.dark{
-    background-color: #232931;
+    background-color: #0f0f0f;
+    transition: 1s;
 }
 .account.dark{
-    color: #8952a3;
+    color: darkgrey;
+    transition: 1s;
 }
 .movie-page.dark{
-    background-color: #726A95;
+    background-color: #202121;
+    transition: 1s;
+}
+.movie-page.dark .movie-card{
+    background-color: #2e2e2e;;
+    box-shadow: none;
+    transition: 1s;
+}
+.movie-page.dark .movie-title{
+    color: grey;
+    transition: 1s;
+}
+.movie-page.dark .movie-description{
+    color: darkgrey;
+    transition: 1s;
+}
+.movie-page-header.dark{
+    background-color: #202121;
+    transition: 1s;
+}
+.movie-page.dark .page-selector{
+    box-shadow: none;
+    background-color: #2e2e2e;
+    transition: 1s;
+}
+.movie-page.dark footer{
+    background-color: #2e2e2e;;
+    transition: 1s;
+}
+.movie-page.dark .movie-all{
+    background-color: #2e2e2e;
+    box-shadow: none;
+    transition: 1s;
+    color: darkgrey;
+}
+.movie-page.dark .movie-all-info{
+    background-color: #202121 ;
+    transition: 1s;
+}
+.movie-page.dark .movie-all-title{
+    color: gray;
 }
