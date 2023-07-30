@@ -19,6 +19,8 @@ html{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 1s;
+  border-bottom: 1px solid grey;
 }
 .find-poster{
   height: 60px;
@@ -82,10 +84,7 @@ header{
   text-decoration: none;
   color:  #8C8C8C;
 }
-.find-element{
-  border-bottom: 1px solid grey;
-  transition: 0.5s;
-}
+
 .find-element:hover{
   background-color: lightgray;
   transition: 0.5s;

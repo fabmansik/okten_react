@@ -1,5 +1,5 @@
 import {Outlet} from "react-router-dom";
-import React, {createContext, useContext, useEffect, useState} from "react";
+import React, {createContext, useEffect, useState} from "react";
 import {HeaderComponent} from "../components/HeaderComponent";
 import {useMediaPredicate} from "react-media-hook";
 export const Context750 = createContext()
@@ -12,9 +12,11 @@ export const MoviesPageContainer = () => {
     const between = useMediaPredicate('(max-width: 1000px) and (min-width: 751px)')
     const [theme, setTheme] = useState('light')
     let localTheme = localStorage.getItem('theme')
+
     useEffect(()=>{
         localTheme? setTheme(localTheme) : localStorage.setItem('theme',theme)
     },[])
+
     return(
         <ThemeContext.Provider value={{theme, setTheme}}>
             <ContextBetween.Provider value={between}>
