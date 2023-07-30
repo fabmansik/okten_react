@@ -405,10 +405,9 @@ footer{
     justify-content: center;
   }
   .shape-img{
-    margin-right: 4px;
     width: 22px;
     height: 22px;
-    right: 5px;
+    margin-right: 3px;
   }
   .movie-list{
     display: grid;
@@ -453,10 +452,46 @@ footer{
     height: 0;
     background-color: #FFFFFF;
     position: absolute;
-    width: 800%;
-    top: 80px;
-    left: -890%;
+    width: 100vw;
+    top: 128px;
     transition: 0.5s;
     overflow: hidden;
+    left: 0;
   }
+  .search{
+    position: static;
+  }
+  .search input{
+    position: absolute;
+    width: 100%;
+    left:0;
+    right:0;
+    height: fit-content;
+    border-radius: 0;
+  }
+  .search input.hidden{
+    top: -30px;
+  }
+  .search input.shown{
+    top: 100px;
+  }
+  .small-search{
+    height: 35px;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+  .search button{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F7F6F6;
+    border: solid 1px RGBA(231, 231, 231, 1);
+    border-radius: 10px;
+  }
+
 }

@@ -65,3 +65,24 @@ header.dark{
 .movie-page.dark .movie-all-title{
     color: gray;
 }
+.pop-up-menu.shown.dark{
+    background-color: #0f0f0f;
+    transition: 1s;
+}
+.pop-up-menu.shown.dark .find-element{
+    border-bottom: 1px solid #202121;
+    transition: 1s;
+}
+.pop-up-menu.shown.dark .find-element:hover{
+    background-color: #202121;
+    transition: 1s;
+}
+.search.dark button{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #202121;
+    transition: 1s;
+    border: 1px solid black;
+}

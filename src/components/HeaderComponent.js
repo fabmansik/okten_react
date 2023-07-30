@@ -15,7 +15,7 @@ export const HeaderComponent = () => {
     const watchPop = watch('pop-up');
     const genres = useContext(GenresContext)
     useEffect(()=>{
-        ApiServices.AxiosSearchMovie(watchPop,setSearchMovies)
+        ApiServices.AxiosSearchMovie(watchPop||'',setSearchMovies)
     },[watchPop])
     return(
         <header className={theme}>
@@ -52,11 +52,14 @@ export const HeaderComponent = () => {
                 </>
             }
             <div className={`search ${theme}`}>
-                <input type='text' {...register('pop-up')} onFocus={()=>setShowPop('shown')}>
+                {small750 && <button className={`small-search`} onClick={()=>showPop === 'hidden'? setShowPop('shown'):setShowPop('hidden')}>
+                    <img className={`shape-img`} src={`/shape_${theme}.png`}></img>
+                </button>}
+                <input type='text' className={showPop} {...register('pop-up')} onFocus={()=>setShowPop('shown')}>
                 </input>
-                 <div className={`pop-up-menu ${showPop} ${theme}`} onClick={()=>setShowPop('hidden')} >
+                 <div className={`pop-up-menu ${showPop} ${theme}`} onClick={(e)=>setShowPop('hidden')}  >
                      {searchMovies.results?.map(element=>
-                         <Link to={`/${params.page}/${element.id}`} state={{genres, element}} preventScrollReset={false} key={element.id}>
+                         <Link className={`x`} to={`/${params.page}/${element.id}`} state={{genres, element}} preventScrollReset={false} key={element.id}>
                              <div className={`find-element`}>
                                  {<img className={`find-poster`}
                                        src={`https://image.tmdb.org/t/p/w500/${element.poster_path}`} alt={'Poster'}/>}
@@ -66,7 +69,7 @@ export const HeaderComponent = () => {
                          </Link>
                      )}
                  </div>
-                <img className={`shape-img`} src={`/shape_${theme}.png`}></img>
+                {!small750 &&   <img className={`shape-img`} src={`/shape_${theme}.png`}></img>}
             </div>
             {!small750 &&<UserInfoComponent/>}
         </header>
