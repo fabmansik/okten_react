@@ -1,4 +1,12 @@
-# Template
+# Movie Website
 
-Empty project on main branch. Template
+Libraries:
+- Router
+- Axios
+- Mui
+- ReactStrap
+- Bootstrap
+- UseForm
+
+Created by Milan Somyk
 
