@@ -20,7 +20,6 @@ export const ApiServices = {
         axios.get(`https://api.themoviedb.org/3/search/movie?query=${search}`,options).then(res=>setMovies(res.data))
     },
     AxiosSearchById: (id, setIdMovie) =>{
-        console.log(id)
         axios.get(`https://api.themoviedb.org/3/movie/${id}`, options).then(res=>setIdMovie(res.data))
     }
 

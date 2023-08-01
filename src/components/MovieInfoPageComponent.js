@@ -10,7 +10,6 @@ export const MovieInfoPageComponent = () => {
         overview, popularity, poster_path, release_date, title, vote_average} = movie
     let movieGenres = []
     const params = useParams()
-    console.log(params)
 
     useEffect(()=>{
         ApiServices.AxiosSearchById(params.id, setMovie
