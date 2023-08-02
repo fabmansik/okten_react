@@ -1,7 +1,7 @@
 import {ApiServices} from "../services/ApiServices";
-import {createContext, useEffect, useState} from "react";
+import React, {createContext, useEffect, useState} from "react";
 import {MoviesListCardComponent} from "./MoviesListCardComponent";
-import {Link, useParams} from "react-router-dom";
+import {Link, ScrollRestoration, useParams} from "react-router-dom";
 export const GenresContext = createContext([])
 export const PageContext = createContext()
 export const MoviesListComponent = () => {
@@ -20,6 +20,7 @@ export const MoviesListComponent = () => {
 
     return(
         <PageContext.Provider value={page.page}>
+            <ScrollRestoration />
             <GenresContext.Provider value={genres}>
                 <div className='movie-list'>
                     {moviesList.map(movie=><MoviesListCardComponent key={movie.id} movie={movie}/>)}
