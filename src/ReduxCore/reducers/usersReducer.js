@@ -1,10 +1,12 @@
 const InitialState = {
     results: [],
     count: 0,
-    error: ''
+    error: '',
+    isLoading: false
 }
 export const UsersTypes = {
-    SET_USERS: 'SET_USERS'
+    SET_USERS: 'SET_USERS',
+    SET_IS_LOADING: 'SET_IS_LOADING'
 }
 export const usersReducer = (state = InitialState, action)=>{
     switch (action.type){
@@ -12,7 +14,13 @@ export const usersReducer = (state = InitialState, action)=>{
             return{
                 ...state,
                 results: action.payload,
-                count: state.count + 1
+                count: state.count + 1,
+                isLoading: false
+            }
+        case UsersTypes.SET_IS_LOADING:
+            return{
+                ...state,
+                isLoading: action.payload
             }
         default:
             return state
