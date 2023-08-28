@@ -1,14 +1,17 @@
-import React, {useState} from 'react';
-import {useDispatch} from "react-redux";
+import React, {FC, PropsWithChildren, useState} from 'react';
 import {carActions} from "../../../redux/";
 import {useForm} from "react-hook-form";
-const Car = ({car}) => {
+import {ICar} from "../../../interfaces/CarInterface";
+import {useAppDispatch} from "../../../hooks/reduxHooks";
+interface IProps{
+    car:ICar
+}
+const Car:FC<PropsWithChildren<IProps>> = ({car}) => {
     const {register, handleSubmit} = useForm()
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [showUpdateForm, setShowUpdateForm] = useState(false);
-    const update = (data) =>{
-        const carData = {id:car.id, data:data}
-        dispatch(carActions.update(carData))
+    const update= (data:ICar):void=>{
+        dispatch(carActions.update(data))
     }
     return (
         <div>
@@ -20,8 +23,8 @@ const Car = ({car}) => {
             {showUpdateForm &&
                 <form onSubmit={handleSubmit(update)}>
                     <input placeholder={car.brand} {...register('brand')}></input>
-                    <input placeholder={car.price} {...register('price')}></input>
-                    <input placeholder={car.year} {...register('year')}></input>
+                    <input placeholder={`${car.price}`} {...register('price')}></input>
+                    <input placeholder={`${car.year}`} {...register('year')}></input>
                     <button type={"submit"}>Submit</button>
                 </form>}
             <button onClick={()=>dispatch(carActions.deleteCar(car.id))}>Delete</button>

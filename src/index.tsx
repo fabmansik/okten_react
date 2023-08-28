@@ -12,9 +12,10 @@ import {
 import CarsContainer from "./components/CarsContainer/CarsContainer";
 import RickAndMortyContainer from "./components/RickAndMortyContainer/Episodes/RickAndMortyContainer";
 import Characters from "./components/RickAndMortyContainer/Characters/Characters";
+
 const router = createBrowserRouter([
     {
-        path:'/',
+        path: '/',
         element: (
             <>
                 <header>
@@ -25,21 +26,21 @@ const router = createBrowserRouter([
                 <Outlet/>
             </>
         ),
-        children:[
+        children: [
             {
-                path:'cars',
+                path: 'cars',
                 element: <CarsContainer/>
             },
             {
-                path:'rickAndMorty',
+                path: 'rickAndMorty',
                 element: <RickAndMortyContainer/>,
             },
             {
-                path:'rickAndMorty/:page?',
+                path: 'rickAndMorty/:page?',
                 element: <RickAndMortyContainer/>,
             },
             {
-                path:'rickAndMorty/:page/:episode',
+                path: 'rickAndMorty/:page/:episode',
                 element: <Characters/>
             }
         ]

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {FC, PropsWithChildren} from 'react';
 import {Link} from "react-router-dom";
 import {useParams} from "react-router";
-
-const RmEpisode = ({ep}) => {
+import {IEpisode} from "../../../interfaces/RMInterfaces";
+interface IProps{
+    ep:IEpisode
+}
+const RmEpisode:FC<PropsWithChildren<IProps>>  = ({ep}) => {
     const params = useParams()
     console.log(ep)
     const {id, name, episode} = ep

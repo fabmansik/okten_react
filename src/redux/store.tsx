@@ -6,4 +6,10 @@ const store = configureStore({
         rm: rmReducer
     }
 })
+type RootState = ReturnType<typeof store.getState>
+type AppDispatch = typeof store.dispatch
+export type {
+    RootState,
+    AppDispatch
+}
 export default store

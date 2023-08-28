@@ -1,11 +1,12 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import {carActions} from "../../../redux/";
-import {useDispatch} from "react-redux";
+import {useAppDispatch} from "../../../hooks/reduxHooks";
+import {ICar} from "../../../interfaces/CarInterface";
 const CarForm = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { register, handleSubmit} = useForm();
-    const onSubmit = async data =>{
+    const onSubmit = async (data:ICar) =>{
         await dispatch(carActions.create(data))
     }
     return (

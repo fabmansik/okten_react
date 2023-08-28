@@ -1,15 +1,14 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
 import {rmActions} from "../../../redux";
 import RmEpisode from "../Episode/RmEpisode";
 import {useParams} from "react-router";
 import {Link} from "react-router-dom";
+import {useAppDispatch, useAppSelector} from "../../../hooks/reduxHooks";
 
 const RickAndMortyContainer = () => {
     const params = useParams()
-    const {results, info} = useSelector(state => state.rm)
-    const dispatch = useDispatch();
-    console.log(info.pages, +params.page)
+    const {results, info} = useAppSelector(state => state.rm)
+    const dispatch = useAppDispatch();
     useEffect(() => {
         (params.page !== undefined && +params.page > 0 && +params.page <= info.pages) ?
             dispatch(rmActions.pageEpisodes(+params.page)) : dispatch(rmActions.episodes())
@@ -17,7 +16,7 @@ const RickAndMortyContainer = () => {
     return (
         <div>
             <div className={'episode-list'}>
-                {results.map(ep => <RmEpisode key={ep.id} ep={ep}/>)}
+                {results.episodes.map((ep) => <RmEpisode key={ep.id} ep={ep}/>)}
             </div>
 
             <Link to={`/rickAndMorty/${!params.page?'': +params.page === 1? 1: +params.page-1}`}>

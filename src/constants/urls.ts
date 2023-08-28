@@ -6,12 +6,12 @@ const characters = '/character'
 const urls = {
     cars: {
         base: cars,
-        byId: (id) => `${cars}/${id}`
+        byId: (id:number) => `${cars}/${id}`
     },
     rm: {
         base: episode,
-        byPage: (page)=>`${episode}?page=${page}`,
-        characters: (data)=>`${characters}/${data}`
+        byPage: (page:number)=>`${episode}?page=${page}`,
+        characters: (data:string[])=>`${characters}/${data}`
     }
 }
 export {
