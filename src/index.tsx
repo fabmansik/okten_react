@@ -6,23 +6,19 @@ import {Provider} from "react-redux";
 import store from "./redux/store";
 import {
     createBrowserRouter,
-    RouterProvider,
-    Link, Outlet,
+    RouterProvider, Outlet,
 } from "react-router-dom";
-import CarsContainer from "./components/CarsContainer/CarsContainer";
-import RickAndMortyContainer from "./components/RickAndMortyContainer/Episodes/RickAndMortyContainer";
-import Characters from "./components/RickAndMortyContainer/Characters/Characters";
+import CarsContainer from "./pages/CarsContainer";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import Header from "./components/Header/Header";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: (
             <>
-                <header>
-                    <h2>Redux Toolkit Homework</h2><br/>
-                    <h4><Link to='cars'>Cars Api</Link></h4>
-                    <h4><Link to='rickAndMorty'>Rick and Morty Api</Link></h4>
-                </header>
+                <Header/>
                 <Outlet/>
             </>
         ),
@@ -32,16 +28,12 @@ const router = createBrowserRouter([
                 element: <CarsContainer/>
             },
             {
-                path: 'rickAndMorty',
-                element: <RickAndMortyContainer/>,
+                path: 'login',
+                element: <LoginPage/>
             },
             {
-                path: 'rickAndMorty/:page?',
-                element: <RickAndMortyContainer/>,
-            },
-            {
-                path: 'rickAndMorty/:page/:episode',
-                element: <Characters/>
+                path: 'register',
+                element: <RegisterPage/>
             }
         ]
     }
@@ -52,5 +44,8 @@ root.render(
         <RouterProvider router={router}/>
     </Provider>
 );
+export {
+    router
+}
 
 reportWebVitals();

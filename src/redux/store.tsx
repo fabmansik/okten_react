@@ -1,9 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {carReducer, rmReducer} from "./slices/";
+import {carReducer} from "./slices/";
+import {authReducer} from "./slices/authSlice";
 const store = configureStore({
     reducer:{
         cars: carReducer,
-        rm: rmReducer
+        auth: authReducer
     }
 })
 type RootState = ReturnType<typeof store.getState>

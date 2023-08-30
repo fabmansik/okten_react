@@ -1,17 +1,18 @@
 const carsURL = process.env.REACT_APP_CARS_API
 const rmURL = process.env.REACT_APP_RM_API
 const cars = '/cars'
-const episode = '/episode'
-const characters = '/character'
+const auth = '/auth'
+const users = '/users'
 const urls = {
     cars: {
-        base: cars,
+        base: (opt?:string|void) => `${cars}${opt? '?'+opt: ''}`,
         byId: (id:number) => `${cars}/${id}`
     },
-    rm: {
-        base: episode,
-        byPage: (page:number)=>`${episode}?page=${page}`,
-        characters: (data:string[])=>`${characters}/${data}`
+    auth:{
+        login: auth,
+        refresh : `${auth}/refresh`,
+        register: users,
+        me:`${auth}/me`
     }
 }
 export {

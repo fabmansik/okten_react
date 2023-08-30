@@ -3,15 +3,17 @@ import {carActions} from "../../../redux/";
 import {useForm} from "react-hook-form";
 import {ICar} from "../../../interfaces/CarInterface";
 import {useAppDispatch} from "../../../hooks/reduxHooks";
+import {useSearchParams} from "react-router-dom";
 interface IProps{
     car:ICar
 }
 const Car:FC<PropsWithChildren<IProps>> = ({car}) => {
     const {register, handleSubmit} = useForm()
     const dispatch = useAppDispatch();
+    const [querry] = useSearchParams()
     const [showUpdateForm, setShowUpdateForm] = useState(false);
-    const update= (data:ICar):void=>{
-        dispatch(carActions.update(data))
+    const update = (data:ICar):void=>{
+        dispatch(carActions.update({id:car.id, options:querry.toString(), ...data}))
     }
     return (
         <div>
@@ -27,7 +29,8 @@ const Car:FC<PropsWithChildren<IProps>> = ({car}) => {
                     <input placeholder={`${car.year}`} {...register('year')}></input>
                     <button type={"submit"}>Submit</button>
                 </form>}
-            <button onClick={()=>dispatch(carActions.deleteCar(car.id))}>Delete</button>
+            <button onClick={()=>dispatch(carActions.deleteCar({car_id: car.id, options: querry.toString()}))}>Delete</button>
+
             <hr/>
         </div>
     );

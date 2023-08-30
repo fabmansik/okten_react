@@ -2,37 +2,52 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {carService} from "../../services";
 import {ICar} from "../../interfaces/CarInterface";
 import {AxiosError} from "axios";
+import {IPagination} from "../../interfaces/PaginationInterface";
 export interface IState {
-    cars: ICar[],
+    pagination: IPagination<ICar>
     carForUpdate: ICar,
     errors: string,
-    isLoading: boolean
+    isLoading: boolean,
 }
 const initialState:IState = {
-    cars: [],
+    pagination: {
+        items: [],
+        next: null,
+        prev: null,
+        total_items: null,
+        total_pages:null
+    },
     carForUpdate: null,
     errors: null,
     isLoading: null
 }
 
-const all = createAsyncThunk<ICar[], void>(
+const all = createAsyncThunk<IPagination<ICar>, string|void>(
     'carsSlice/all',
-    async (_, {rejectWithValue}) => {
+    async (options, {rejectWithValue}) => {
         try {
-            let {data} = await carService.getAll();
-            return data
+            if(typeof options === "string"){
+                let {data} = await carService.getAll(options);
+                return data
+            } else {
+                let {data} = await carService.getAll();
+                return data
+            }
+
+
         } catch (e) {
             const err = e as AxiosError
             return rejectWithValue(err.response.data)
         }
     }
 )
-const create = createAsyncThunk<ICar[], ICar>(
+
+const create = createAsyncThunk<ICar[], {car:ICar, options: string}>(
     'carsSlice/create',
-    async (car,thunkAPi) =>{
+    async ({car, options},thunkAPi) =>{
         try {
             await carService.create(car)
-            thunkAPi.dispatch(all())
+            thunkAPi.dispatch(all(options))
         }catch (e){
             const err = e as AxiosError
             return thunkAPi.rejectWithValue(err.response.data)
@@ -44,19 +59,19 @@ const update = createAsyncThunk<ICar[], ICar>(
     async (data,thunkAPi) =>{
         try {
             await carService.update(data.id, data)
-            thunkAPi.dispatch(all())
+            thunkAPi.dispatch(all(data?.options))
         }catch (e){
             const err = e as AxiosError
             return thunkAPi.rejectWithValue(err.response.data)
         }
     }
 )
-const deleteCar = createAsyncThunk<ICar[], number>(
+const deleteCar = createAsyncThunk<ICar[], {car_id:number, options:string}>(
     'carsSlice/deleteCar',
     async (data,thunkAPi) =>{
         try {
-            await carService.delete(data)
-            thunkAPi.dispatch(all())
+            await carService.delete(data.car_id)
+            thunkAPi.dispatch(all(data?.options))
         }catch (e){
             const err = e as AxiosError
             return thunkAPi.rejectWithValue(err.response.data)
@@ -69,7 +84,7 @@ const carsSlice = createSlice({
     reducers: {},
     extraReducers: builder => builder
         .addCase(all.fulfilled, (state, action)=>{
-            state.cars= action.payload
+            state.pagination = action.payload
             state.isLoading= false
         })
         .addCase(all.pending,(state)=>{
@@ -87,6 +102,7 @@ const carsSlice = createSlice({
         .addCase(create.pending, (state)=>{
             state.isLoading=true
         })
+
 
     })
 const {reducer: carReducer, actions} = carsSlice;

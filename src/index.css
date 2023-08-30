@@ -35,3 +35,27 @@ code {
 .episode p{
   margin: 5px 5px 0;
 }
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+header a{
+  text-decoration: none;
+  color:black
+}
+.links{
+  width: 15%;
+}
+.links div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pages{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
