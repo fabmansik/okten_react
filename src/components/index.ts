@@ -1,1 +1,4 @@
-export * from './CarsContainer'
+export * from "./Cars";
+export * from "./Car";
+export * from "./CarForm";
+export * from "../pages/CarsContainer";

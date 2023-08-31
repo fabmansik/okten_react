@@ -6,7 +6,8 @@ const users = '/users'
 const urls = {
     cars: {
         base: (opt?:string|void) => `${cars}${opt? '?'+opt: ''}`,
-        byId: (id:number) => `${cars}/${id}`
+        byId: (id:number) => `${cars}/${id}`,
+        photo: (id:number):string =>`${cars}/${id}/photo`
     },
     auth:{
         login: auth,

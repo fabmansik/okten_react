@@ -59,3 +59,14 @@ header a{
   justify-content: center;
   align-items: center;
 }
+.cars-div{
+  margin: 0 10px;
+}
+.car-details{
+  display: flex;
+  align-items: center;
+}
+.car-details img{
+  height: 100px;
+  margin: 0 10px 0 0;
+}

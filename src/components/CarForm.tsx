@@ -1,8 +1,8 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {carActions} from "../../../redux/";
-import {useAppDispatch} from "../../../hooks/reduxHooks";
-import {ICar} from "../../../interfaces/CarInterface";
+import {carActions} from "../redux";
+import {useAppDispatch} from "../hooks/reduxHooks";
+import {ICar} from "../interfaces/CarInterface";
 import {useSearchParams} from "react-router-dom";
 const CarForm = () => {
     const dispatch = useAppDispatch();

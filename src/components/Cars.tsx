@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import {carActions} from "../../../redux/";
-import Car from "../Car/Car";
-import {ICar} from "../../../interfaces/CarInterface";
-import {useAppDispatch, useAppSelector} from "../../../hooks/reduxHooks";
+import {carActions} from "../redux";
+import Car from "./Car";
+import {ICar} from "../interfaces/CarInterface";
+import {useAppDispatch, useAppSelector} from "../hooks/reduxHooks";
 import {useLocation, useSearchParams} from "react-router-dom";
 
 const Cars = () => {
